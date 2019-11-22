@@ -11,20 +11,22 @@ npm install mongo-with
 ## Interface
 
 ```javascript
-import * as muse from "mongo-with";
+import { db } from "mongo-with";
 
-var mongo = {
-    url: "mongodb://127.0.0.1:27017",
-    db: "test_db"
-};
+async function main() {
 
-let with (func) => muse.db.use(mongo.url, mongo.db, func)
+	var mongo = {
+		url: "mongodb://127.0.0.1:27017",
+		db: "db_name"
+	};
 
-with(async (db) => { // db connection is opened
-    var array = await db.collection('test_collection').find().toArray();
-    console.log(array);
-}); // db connection is closed. no leaks.
+	await db.with(mongo.url, mongo.db, async (db) => {
+		var labels = await db.collection(`collection_name`).find().toArray();
+		console.log(labels);
+	});
+}
 
+main();
 ```
 
 ## Source
