@@ -1,0 +1,19 @@
+{
+  "name": "mongo-with",
+  "version": "0.0.2",
+  "description": "Implement 'with' idiom for mongo connections in nodejs.",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "build": "npm run tsc"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^3.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.5",
+    "typescript": "^3.6.4"
+  }
+}
