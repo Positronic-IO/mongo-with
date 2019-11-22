@@ -26,3 +26,7 @@ with(async (db) => { // db connection is opened
 }); // db connection is closed. no leaks.
 
 ```
+
+## Source
+
+[https://github.com/Positronic-IO/mongo-with](https://github.com/Positronic-IO/mongo-with)
